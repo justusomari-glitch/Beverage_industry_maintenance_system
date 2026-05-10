@@ -6,4 +6,4 @@ ipynb_checkpoints
 .DS_Store
 mlruns/
 mlartifacts/
-mlflow.db
+mlflow.db/
