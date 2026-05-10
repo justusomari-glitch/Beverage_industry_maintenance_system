@@ -1,0 +1,23 @@
+artifact_path: file:///C:/Users/user/Desktop/Kwache/mlruns/1/models/m-dbfc5175673d42b8b9556b8ff982a556/artifacts
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.12.4
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.8.0
+    skops_trusted_types: null
+mlflow_version: 3.11.1
+model_id: m-dbfc5175673d42b8b9556b8ff982a556
+model_size_bytes: 21046999
+model_uuid: m-dbfc5175673d42b8b9556b8ff982a556
+prompts: null
+run_id: b9108d238df841579a35e1b9f4713e8c
+utc_time_created: '2026-05-09 18:53:30.823179'
