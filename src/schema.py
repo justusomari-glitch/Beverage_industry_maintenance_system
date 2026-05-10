@@ -1,0 +1,119 @@
+from pydantic import BaseModel
+
+class AnomalyDetection(BaseModel):
+    temperature: float
+    vibration: float
+    pressure: float
+    rotation_speed: float
+    torque: float
+    voltage: float
+    current: float
+    power_consumption: float
+    humidity: float
+    noise_level: float
+    flow_rate: float
+    product_temperature: float
+    cleaning_cycle_status: str
+    oil_level: float
+    bearing_temperature: float
+    hours_since_maintenance: int
+
+class FailureTypePrediction(BaseModel):
+    temperature: float
+    vibration: float
+    pressure: float
+    rotation_speed: float
+    torque: float
+    voltage: float
+    current: float
+    power_consumption: float
+    humidity: float
+    noise_level: float
+    flow_rate: float
+    product_temperature: float
+    cleaning_cycle_status: str
+    oil_level: float
+    bearing_temperature: float
+    hours_since_maintenance: int
+    zone: str
+    criticality_level: str
+
+class RecommendedActionPrediction(BaseModel):
+    temperature: float
+    vibration: float
+    pressure: float
+    rotation_speed: float
+    torque: float
+    voltage: float
+    current: float
+    power_consumption: float
+    humidity: float
+    noise_level: float
+    flow_rate: float
+    product_temperature: float
+    cleaning_cycle_status: str
+    oil_level: float
+    bearing_temperature: float
+    hours_since_maintenance: int
+    zone: str
+    criticality_level: str
+
+class RootCausePrediction(BaseModel):
+    temperature: float
+    vibration: float
+    pressure: float
+    rotation_speed: float
+    torque: float
+    voltage: float
+    current: float
+    power_consumption: float
+    humidity: float
+    noise_level: float
+    flow_rate: float
+    product_temperature: float
+    cleaning_cycle_status: str
+    oil_level: float
+    bearing_temperature: float
+    hours_since_maintenance: int
+    zone: str
+    criticality_level: str
+
+class SeverityPrediction(BaseModel):
+    temperature: float
+    vibration: float
+    pressure: float
+    rotation_speed: float
+    torque: float
+    voltage: float
+    current: float
+    power_consumption: float
+    humidity: float
+    noise_level: float
+    flow_rate: float
+    product_temperature: float
+    cleaning_cycle_status: str
+    oil_level: float
+    bearing_temperature: float
+    hours_since_maintenance: int
+    zone: str
+    criticality_level: str
+
+class MaintenanceSystem(BaseModel):
+    temperature: float
+    vibration: float
+    pressure: float
+    rotation_speed: float
+    torque: float
+    voltage: float
+    current: float
+    power_consumption: float
+    humidity: float
+    noise_level: float
+    flow_rate: float
+    product_temperature: float
+    cleaning_cycle_status: int
+    oil_level: float
+    bearing_temperature: float
+    hours_since_maintenance: int
+    zone: str
+    criticality_level: str
