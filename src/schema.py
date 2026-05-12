@@ -1,4 +1,5 @@
 from pydantic import BaseModel
+from typing import List
 
 class AnomalyDetection(BaseModel):
     temperature: float
@@ -117,3 +118,9 @@ class MaintenanceSystem(BaseModel):
     hours_since_maintenance: int
     zone: str
     criticality_level: str
+
+
+class ChatRequests(BaseModel):
+    user_message: str
+    conversation_history: list=[]
+    prediction_context: dict

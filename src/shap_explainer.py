@@ -34,7 +34,7 @@ def get_shap_failure_explanation(failure_model,failure_explainer,df):
     input_array=failure_model.named_steps['type_process'].transform(df)
     input_array=failure_model.named_steps['type_features'].transform(input_array)
     feature_names=failure_model.named_steps['type_process'].get_feature_names_out()
-    feature_names=[f.replace('oht').replace('std_',"")for f in feature_names]
+    feature_names=[f.replace('oht',"").replace('std_',"")for f in feature_names]
     rf_shap=rf_explainer.shap_values(input_array,approximate=True)
     xg_shap=xg_explainer.shap_values(input_array,approximate=True)
 
