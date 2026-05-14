@@ -1,0 +1,12 @@
+venv/
+__pycache__/
+*.pyc
+*.pyo
+.env
+.git
+.gitignore
+*.ipynb
+mlflow.db
+.pytest_cache
+tests/
+*.log
