@@ -36,5 +36,8 @@ jobs :
               run: |
                 docker build -t product-api .
             - name: Test app import 
+              env:
+                DAGSHUB_TOKEN: ${{secrets.DAGSHUB_TOKEN}}
+                GROQ_API_KEY: ${{secrets.GROQ_API_KEY}}
               run: python -c "from src.predict import app;print('succesfull')"
             
