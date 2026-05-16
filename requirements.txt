@@ -9,8 +9,8 @@ pandas==2.2.3
 pydantic==2.13.4
 pytest==9.0.3
 python-dotenv==1.2.2
-scikit-learn==1.8.0
+scikit-learn==1.5.2
 shap==0.44.0
 uvicorn==0.46.0
 xgboost==3.2.0
-imbalanced-learn==0.13.0
+imbalanced-learn==0.12.4
