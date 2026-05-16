@@ -11,6 +11,6 @@ pytest==9.0.3
 python-dotenv==1.2.2
 scikit-learn==1.6.1
 shap==0.46.0
-uvicorn==0.46.0
-xgboost==3.2.0
+uvicorn==0.44.1
+xgboost==2.0.3
 imbalanced-learn==0.12.4
