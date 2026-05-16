@@ -18,8 +18,9 @@ def get_shap_anomaly_explanation(anomaly_model,anomaly_explainer, df):
     feature_names=[f.replace('std_',"")for f in feature_names]
     # tree explainer on isolation forest
     shap_values=anomaly_explainer.shap_values(input_array,approximate=True)
+    vals=np.array(shap_values)
     #return as a dict
-    return dict(zip(feature_names,shap_values[0].tolist()))
+    return dict(zip(feature_names,vals[0][0].tolist()))
 
 def init_failure_explainer(failure_model):
     rf_model=failure_model.named_steps['ensemble'].estimators_[0]
