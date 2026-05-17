@@ -40,4 +40,26 @@ jobs :
                 DAGSHUB_TOKEN: ${{secrets.DAGSHUB_TOKEN}}
                 GROQ_API_KEY: ${{secrets.GROQ_API_KEY}}
               run: python -c "from src.predict import app;print('succesfull')"
+            - name: Deploy To EC2
+              env: 
+                EC2_HOST: ${{secrets.EC2_HOST}}
+                EC2_USER: ${{secrets.EC2_USER}}
+                EC2_KEY: ${{secrets.EC2_KEY}}
+              run: |
+                echo "$EC2_KEY"> key.pem
+                chmod 600 key.pem
+                ssh -o StrictHostKeyChecking=no -i key.pem $EC2_USER@EC2_HOST "
+                cd Beverage_industry_maintenance_system &&
+                git pull &&
+                sudo docker buid -t product-api . &&
+                sudo docker stop zealous_tu || true &&
+                sudo docker run -d --restart always -p 8000:8000 \
+                 -e GROQ_API_KEY=${{secrets.GROQ_API_KEY}} \
+                 -e DAGSHUB_TOKEN=${{secrets.GITHUB_TOKEN}} \
+                 product-api
+                "
+
+
+
+
             
