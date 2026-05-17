@@ -51,11 +51,11 @@ jobs :
                 ssh -o StrictHostKeyChecking=no -i key.pem $EC2_USER@EC2_HOST "
                 cd Beverage_industry_maintenance_system &&
                 git pull &&
-                sudo docker buid -t product-api . &&
+                sudo docker build -t product-api . &&
                 sudo docker stop zealous_tu || true &&
                 sudo docker run -d --restart always -p 8000:8000 \
                  -e GROQ_API_KEY=${{secrets.GROQ_API_KEY}} \
-                 -e DAGSHUB_TOKEN=${{secrets.GITHUB_TOKEN}} \
+                 -e DAGSHUB_TOKEN=${{secrets.DAGSHUB_TOKEN}} \
                  product-api
                 "
 
