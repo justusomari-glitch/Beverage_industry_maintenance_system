@@ -118,8 +118,7 @@ def predict(maintenance_data: MaintenanceSystem):
         "system_explanations":llm_explanation,
         "system_recommendations":llm_recomendation,
         "interactivity":llm_chat
-
-    }
+        }
 
 @app.post("/chat")
 def chat(chat_data: ChatRequests):
