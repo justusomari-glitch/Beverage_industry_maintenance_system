@@ -12,6 +12,16 @@ st.set_page_config(
 )
 
 API_URL=st.secrets["API_URL"]
+st.markdown("""
+<style>
+.stApp{
+    background-color: #000000 !important;
+}
+[data-testid="stSidebar"]{
+    background-color: #000000 !important;
+}
+</style>
+""",unsafe_allow_html=True)
 
 st.markdown("""
 <style>
