@@ -23,7 +23,7 @@ st.markdown("""
 [data-testid="stNumberInput"] input{
     background-color: #111827 !important;
     color: white !important;
-    border: 1px solid #00d4ff important;
+    border: 0px solid #00d4ff important;
     
 }
 [data-testid="stNumberInput"] button{
