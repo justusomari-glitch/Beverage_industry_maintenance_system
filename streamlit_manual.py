@@ -20,19 +20,16 @@ st.markdown("""
 [data-testid="stSidebar"]{
     background-color: #000000 !important;
 }
-[data-testid="stNumberInput"] > div{
-    border: 1px solid #00d4ff important;
-    border-radius: 4px !important;
+[data-testid="stNumberInput"] input{
     background-color: #111827 !important;
-
-/* Remove Default white Boarder */  
-[data-testid="stNumberInput"] {
-    border: none important;
+    color: white !important;
+    border: 1px solid #00d4ff important;
+    
 }
 [data-testid="stNumberInput"] button{
     background-color: #111827 !important;
-    color: #00d4ff important;
-    border : none !important;
+    color: white !important;
+    border : none !important
     
 }
 
