@@ -20,23 +20,24 @@ st.markdown("""
 [data-testid="stSidebar"]{
     background-color: #000000 !important;
 }
+[data-testid="stNumberInput"] input{
+    background-color: #111827 !important;
+    color: white !important;
+    border: 1px solid #1e3a5f !important;
+}
 
 /* Specific Overides For each card type */
-.result-card.anomaly .value,
-.result-card.ok .value,
-.result-card.info .value,
-.result-card.warn .value,
-.result-card.danger .value,
-.result-card.success .value,
-.result-card.accent .value {
+[class*="result-card"] [class*="label"] {
     color: white !important;
+    opacity: 1 important;
 }
-.resut-card .label {
-    color: rgba(255,255,255,0.85) !important;
+[class*="result-card"] [class*="value"] {
+    color: white !important;
+    opacity: 1 important;
 }
 /* Spinner Text */
 .stSpinner > div > span {
-    color: white !important
+    color: white !important;
 }
 </style>
 """,unsafe_allow_html=True)
@@ -46,7 +47,7 @@ st.markdown("""
 @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Exo+2:wght@300;400;600;700&display=swap');
 /* Root palette */
 :root {
-    --bg:      #0a0e1a;
+    --bg:       #0a0e1a;
     --panel:    #111827;
     --border:   #1e3a5f;
     --accent:   #00d4ff;
