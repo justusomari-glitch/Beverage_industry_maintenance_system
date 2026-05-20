@@ -20,6 +20,17 @@ st.markdown("""
 [data-testid="stSidebar"]{
     background-color: #000000 !important;
 }
+
+/* Specific Overides For each card type */
+.result-card.anomaly .value,
+.result-card.ok .value,
+.result-card.info .value,
+.result-card.warn .value,
+.result-card.danger .value,
+.result-card.success .value,
+.result-card.accent .value {
+    color: white !important;
+}
 </style>
 """,unsafe_allow_html=True)
 
