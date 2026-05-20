@@ -52,8 +52,10 @@ jobs :
                 cd Beverage_industry_maintenance_system &&
                 git pull &&
                 sudo docker build -t product-api . &&
+                sudo docker kill product-api || true &&
                 sudo docker stop product-api || true &&
                 sudo docker rm product-api || true &&
+                sleep 2 &&
                 sudo docker run -d --restart always --name product-api -p 8000:8000 \
                  -e GROQ_API_KEY=${{secrets.GROQ_API_KEY}} \
                  -e DAGSHUB_TOKEN=${{secrets.DAGSHUB_TOKEN}} \
