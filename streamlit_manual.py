@@ -31,6 +31,13 @@ st.markdown("""
 .result-card.accent .value {
     color: white !important;
 }
+.resut-card .label {
+    color: rgba(255,255,255,0.85) !important;
+}
+/* Spinner Text */
+.stSpinner > div > span {
+    color: white !important
+}
 </style>
 """,unsafe_allow_html=True)
 
@@ -233,24 +240,24 @@ st.markdown("""
 # sidebar inputs
 with st.sidebar:
     st.markdown('<div class="selection-label">Sensor Input Parameters</div>',unsafe_allow_html=True)
-    temperature= st.number_input("Temperature (C)", value=91.0, step=0.1)
-    vibration= st.number_input("Vibration (mm/s)", value=2.5, step=0.01)
-    pressure= st.number_input("Pressure (bar)", value=10.5, step=0.1)
-    rotation_speed= st.number_input("Rotation Speed (RPM)", value=1517.0, step=1.0)
-    torque= st.number_input("Torque (N-m)", value=17.0, step=0.1)
-    voltage= st.number_input("Voltage (V)", value=340.0, step=0.1)
-    current= st.number_input("Current (A)", value=32.0, step=0.1)
-    power_consumption= st.number_input("Power Consumption (kW)", value=23.2, step=0.01)
-    humidity= st.number_input("Humidity (%)", value=65.0, step=0.1)
-    noise_level= st.number_input("Noise Level (dB)", value=68.0, step=0.1)
-    flow_rate= st.number_input("Flow Rate (L/min)", value=400.0, step=0.1)
-    product_temperature= st.number_input("Product Temperature (C)", value=84.0, step=0.1)
-    oil_level= st.number_input("Oil Level (%)", value=78.0, step=0.1)
-    bearing_temperature= st.number_input("Bearing Temperature (C)", value=45.0, step=0.1)
+    temperature= st.number_input("Temperature (C)", value=87.5, step=0.1)
+    vibration= st.number_input("Vibration (mm/s)", value=3.16, step=0.01)
+    pressure= st.number_input("Pressure (bar)", value=11.72, step=0.1)
+    rotation_speed= st.number_input("Rotation Speed (RPM)", value=1499.17, step=1.0)
+    torque= st.number_input("Torque (N-m)", value=174.32, step=0.1)
+    voltage= st.number_input("Voltage (V)", value=390.7, step=0.1)
+    current= st.number_input("Current (A)", value=32.28, step=0.1)
+    power_consumption= st.number_input("Power Consumption (kW)", value=24.82, step=0.01)
+    humidity= st.number_input("Humidity (%)", value=60.70, step=0.1)
+    noise_level= st.number_input("Noise Level (dB)", value=70.40, step=0.1)
+    flow_rate= st.number_input("Flow Rate (L/min)", value=456.46, step=0.1)
+    product_temperature= st.number_input("Product Temperature (C)", value=72.30, step=0.1)
+    oil_level= st.number_input("Oil Level (%)", value=85.01, step=0.1)
+    bearing_temperature= st.number_input("Bearing Temperature (C)", value=57.20, step=0.1)
 
     st.markdown('<div class="selection-label">Operational Parameters</div>',unsafe_allow_html=True)
     cleaning_cycle_status= st.selectbox("Cleaning Cycle Status",[1,0], format_func=lambda x: "Active" if x else "Inactive")
-    hours_since_maintenance= st.number_input("Hours Since Maintenance (C)", value=5, step=1,min_value=0)
+    hours_since_maintenance= st.number_input("Hours Since Maintenance (C)", value=3, step=1,min_value=0)
     zone= st.selectbox("Zone",["Zone B","Zone C","Zone D","Zone A"])
     criticality_level= st.selectbox("Criticality Level",["Low","Medium","High"])
 
