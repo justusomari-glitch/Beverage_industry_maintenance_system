@@ -26,6 +26,11 @@ st.markdown("""
     border: 1px solid #1e3a5f important;
     
 }
+[data-testid="stNumberInput"] button{
+    background-color: #111827 !important;
+    color: white !important;
+    
+}
 
 /* Specific Overides For each card type */
 [class*="result-card"] [class*="label"] {
