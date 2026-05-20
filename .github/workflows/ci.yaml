@@ -52,6 +52,7 @@ jobs :
                 cd Beverage_industry_maintenance_system &&
                 git pull &&
                 sudo docker build -t product-api . &&
+                sudo docker kill product-api || true &&
                 sudo docker stop product-api || true &&
                 sudo docker rm product-api || true &&
                 sudo docker run -d --restart always --name product-api -p 8000:8000 \
