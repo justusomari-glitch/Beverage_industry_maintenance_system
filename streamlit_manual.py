@@ -23,7 +23,7 @@ st.markdown("""
 [data-testid="stNumberInput"] input{
     background-color: #111827 !important;
     color: white !important;
-    border: 1px solid #1e3a5f !important;
+    
 }
 
 /* Specific Overides For each card type */
@@ -32,6 +32,10 @@ st.markdown("""
     opacity: 1 important;
 }
 [class*="result-card"] [class*="value"] {
+    color: white !important;
+    opacity: 1 important;
+}
+.section-label{
     color: white !important;
     opacity: 1 important;
 }
