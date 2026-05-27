@@ -48,8 +48,6 @@ jobs :
                 KAFKA_BOOTSTRAP_SERVERS: ${{secrets.KAFKA_BOOTSTRAP_SERVERS}}
                 KAFKA_API_KEY: ${{secrets.KAFKA_API_KEY}}
                 KAFKA_API_SECRET: ${{secrets.KAFKA_API_SECRET}}
-                DAGSHUB_TOKEN: ${{secrets.DAGSHUB_TOKEN}}
-                GROQ_API_KEY: ${{secrets.GROQ_API_KEY}}
               run: |
                 echo "$EC2_KEY"> key.pem
                 chmod 600 key.pem
@@ -65,8 +63,8 @@ jobs :
                 sudo docker ps -a
                 sleep 3 &&
                 sudo docker run -d --restart always --name product-api -p 8000:8000 \
-                 -e GROQ_API_KEY=GROQ_API_KEY \
-                 -e DAGSHUB_TOKEN=DAGSHUB_TOKEN \
+                 -e GROQ_API_KEY=${{secrets.GROQ_API_KEY}} \
+                 -e DAGSHUB_TOKEN=${{secrets.DAGSHUB_TOKEN}} \
                  -e KAFKA_BOOTSTRAP_SERVERS=KAFKA_BOOTSTRAP_SERVERS \
                  -e KAFKA_API_KEY=KAFKA_API_KEY \
                  -e KAFKA_API_SECRET=KAFKA_API_SECRET \
