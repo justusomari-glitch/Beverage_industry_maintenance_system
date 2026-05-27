@@ -32,7 +32,7 @@ def simulate_sensors():
         "bearing_temperature": round(random.uniform(30.0,100.0),2),
         "product_temperature": round(random.uniform(20.0,80.0),2),
         "cleaning_cycle_status": random.choice(["Active", "Inactive"]),
-        "hours_since_maintenance": round(random.uniform(0.0,200.0),2),
+        "hours_since_maintenance": random.randint(1,200),
         "zone": random.choice(["Zone A", "Zone B", "Zone C"]),
         "criticality_level": random.choice(["Low", "Medium", "High"])
     }

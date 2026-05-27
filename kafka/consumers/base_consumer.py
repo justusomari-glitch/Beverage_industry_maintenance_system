@@ -3,6 +3,7 @@ import requests
 from confluent_kafka import Consumer, KafkaError
 from config import KAFKA_CONFIG, TOPICS, FASTAPI_URL
 from db import get_db_connection, create_table, save_to_db
+import traceback
 
 
 MODEL_FEATURES=[
@@ -60,16 +61,22 @@ def run(topic,group_id,table_name):
 
             payload = json.loads(msg.value().decode("utf-8"))
             print(f"Received message: {payload}")
+            payload["cleaning_cycle_status"]=1 if payload.get("cleaning_cycle_status")=="Active" else 0
 
             model_input = {k: payload[k] for k in MODEL_FEATURES if k in payload}
             metadata = {k: payload[k] for k in METADATA_FIELDS if k in payload}
 
+
+            model_input["cleaning_cycle_status"] = 1 if model_input.get("cleaning_cycle_status") == "Active" else 0
             try:
                 response = requests.post(FASTAPI_URL, json=model_input)
                 prediction = response.json()
+                print(f"Prediction response: {prediction}")
+                
                 save_to_db(conn,table_name,payload,prediction)
                 print(f"Saved -machine_id={payload.get('machine_id')}|table={table_name}")
             except Exception as e:
+                traceback.print_exc()
                 print(f"Error calling prediction API: {e}")
     except KeyboardInterrupt:
         print("Consumer interrupted. Closing connection.")

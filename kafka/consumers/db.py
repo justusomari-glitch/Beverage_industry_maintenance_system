@@ -2,7 +2,10 @@ import pymysql
 from config import DB_CONFIG
 
 def get_db_connection():
-    return pymysql.connect(**DB_CONFIG)
+    return pymysql.connect(
+        **DB_CONFIG,
+        cursorclass=pymysql.cursors.DictCursor
+    )
 
 def create_table(conn,table_name):
     cursor=conn.cursor()
@@ -27,7 +30,7 @@ def create_table(conn,table_name):
             noise_level FLOAT,
             flow_rate FLOAT,
             product_temperature FLOAT,
-            cleaning_cycle_status VARCHAR(255),
+            cleaning_cycle_status INT,
             oil_level FLOAT,
             bearing_temperature FLOAT,
             hours_since_maintenance INT,
@@ -51,20 +54,21 @@ def create_table(conn,table_name):
 
 def save_to_db(conn,table_name,payload,prediction):
     cursor=conn.cursor()
-    cursor.execute(f"""
+    query=f"""
         INSERT INTO {table_name} (machine_id, machine_name, machine_type, section,
         timestamp,temperature,vibration,pressure,rotation_speed,torque,voltage,current,
         power_consumption,humidity,noise_level,flow_rate,product_temperature,cleaning_cycle_status,
-        oil_level,bearing_temperature,hours_since_maintenance,zone,criticality_level,anomaly,failure_type,recommended_action,
+        oil_level,bearing_temperature,hours_since_maintenance,zone,criticality_level,anomaly,failure_type,
+        recommended_action,
         root_cause,severity,mcdm_score,priority,system_explanations,system_recommendations)
         VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, 
         %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
-    """, (
+    """
+    values= (
         payload["machine_id"],
         payload["machine_name"],
         payload["machine_type"],
         payload["section"],
-        payload["criticality_level"],
         payload["timestamp"],
         payload.get("temperature"),
         payload.get("vibration"),
@@ -93,6 +97,7 @@ def save_to_db(conn,table_name,payload,prediction):
         prediction.get("priority"),
         prediction.get("system_explanations"),
         prediction.get("system_recommendations")
-    ))
+    )
+    cursor.execute(query, values)
     conn.commit()
     cursor.close()

@@ -52,7 +52,7 @@ def get_llm_explanation(groq_client,anomaly_binary,failure_type,recommended_acti
         temperature=0.3,
         max_tokens=300
     )
-    return response.choices[0].message.content
+    return response.choices[0].message.content.replace("**","").strip()
 
 def get_llm_recommendation(groq_client,anomaly_binary,failure_type,recommended_action,
         root_cause,tuned_severity,scores,anomaly_shap,failure_type_shap):
@@ -92,7 +92,7 @@ def get_llm_recommendation(groq_client,anomaly_binary,failure_type,recommended_a
         temperature=0.3,
         max_tokens=300
     )
-    return response.choices[0].message.content
+    return response.choices[0].message.content.replace("**","").strip()
 
 
 def get_llm_chat_response(groq_client,user_message,conversation_history,anomaly_binary,failure_type,recommended_action,
@@ -131,6 +131,6 @@ def get_llm_chat_response(groq_client,user_message,conversation_history,anomaly_
         temperature=0.5,
         max_tokens=300
     )
-    return response.choices[0].message.content
+    return response.choices[0].message.content.replace("**","").strip()
 
 
