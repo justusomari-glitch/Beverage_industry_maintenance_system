@@ -9,3 +9,4 @@ mlartifacts/
 mlflow.db/
 .env
 .streamlit
+ca.pem
