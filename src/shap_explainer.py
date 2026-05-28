@@ -12,6 +12,7 @@ def get_shap_anomaly_explanation(anomaly_model,anomaly_explainer, df):
     best_pipeline=anomaly_model.best_estimator_
     #trasform data using processing steps
     input_array=best_pipeline.named_steps['processing'].transform(df)
+    input_array=np.array(input_array)
     #get the feature names from the column transformer
     feature_names=best_pipeline.named_steps['processing'].get_feature_names_out()
     #clean the feature names by removing 'std'

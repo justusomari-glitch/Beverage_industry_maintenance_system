@@ -71,8 +71,13 @@ def predict(maintenance_data: MaintenanceSystem):
     priority=decision_engine(row)
 
     #shap explainability
-    anomaly_shap=get_shap_anomaly_explanation(model_store.anomaly_model,model_store.anomaly_explainer, df)
-    failure_type_shap=get_shap_failure_explanation(model_store.failure_model,model_store.failure_explainer,df)
+    try:
+        anomaly_shap=get_shap_anomaly_explanation(model_store.anomaly_model,model_store.anomaly_explainer, df)
+        failure_type_shap=get_shap_failure_explanation(model_store.failure_model,model_store.failure_explainer,df)
+    except Exception as e:
+        anomaly_shap={}
+        failure_type={}
+        print(f"SHAP error: {e}")
 
     ## we want to log prediction in mlflow
     log_prediction(df,anomaly_binary,failure_type,recommended_action,root_cause,tuned_severity,scores,

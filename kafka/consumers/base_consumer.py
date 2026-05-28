@@ -70,6 +70,8 @@ def run(topic,group_id,table_name):
             model_input["cleaning_cycle_status"] = 1 if model_input.get("cleaning_cycle_status") == "Active" else 0
             try:
                 response = requests.post(FASTAPI_URL, json=model_input)
+                print(f"status: {response.status_code}")
+                print(f"Response: {response.text}")
                 prediction = response.json()
                 print(f"Prediction response: {prediction}")
                 
