@@ -1,10 +1,10 @@
-import pymysql
+import mysql.connector
 from config import DB_CONFIG
 
 def get_db_connection():
-    return pymysql.connect(
+    return mysql.connector.connect(
         **DB_CONFIG,
-        cursorclass=pymysql.cursors.DictCursor
+        cursorclass=mysql.connector.cursors.DictCursor
     )
 
 def create_table(conn,table_name):

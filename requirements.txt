@@ -18,3 +18,4 @@ streamlit
 plotly
 confluent-kafka
 python-dotenv
+mysql-connector-python==8.3.0
