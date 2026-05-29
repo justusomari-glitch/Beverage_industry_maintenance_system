@@ -10,3 +10,4 @@ mlflow.db/
 .env
 .streamlit
 ca.pem
+bash.exe.stackdump

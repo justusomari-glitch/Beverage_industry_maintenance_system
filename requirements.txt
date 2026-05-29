@@ -18,3 +18,4 @@ streamlit
 plotly
 confluent-kafka
 python-dotenv
+pymysql
