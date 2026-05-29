@@ -18,4 +18,3 @@ streamlit
 plotly
 confluent-kafka
 python-dotenv
-pymysql==1.1.1
