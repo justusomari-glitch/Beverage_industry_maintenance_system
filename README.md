@@ -138,6 +138,13 @@ GROQ_API_KEY=
 FASTAPI_URL=
 ```
 
+## Links
+- 🔗 [LinkedIn](https://www.linkedin.com/in/your-profile)
+- 🚀 [Live Demo - Manual Input](your-streamlit-link)
+- 📊 [Live Demo - Real Time Monitoring](your-streamlit-link)
+- 📈 [MLflow Experiments](https://dagshub.com/justusomari-glitch/Beverage_industry_maintenance_system.mlflow)
+
+
 
 
 
