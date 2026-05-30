@@ -139,9 +139,9 @@ FASTAPI_URL=
 ```
 
 ## Links
-- 🔗 [LinkedIn](https://www.linkedin.com/in/your-profile)
-- 🚀 [Live Demo - Manual Input](your-streamlit-link)
-- 📊 [Live Demo - Real Time Monitoring](your-streamlit-link)
+- 🔗 [LinkedIn](https://www.linkedin.com/in/justus-kwache-omari/)
+- 🚀 [Live Demo - Manual Input](https://beverageindustrymaintenancesystem-b4xlh2dyhxtjzmr3hwwepj.streamlit.app/)
+- 📊 [Live Demo - Real Time Monitoring](https://beverageindustrymaintenancesystem-k3iupzxlon9yukzmxfnadf.streamlit.app/)
 - 📈 [MLflow Experiments](https://dagshub.com/justusomari-glitch/Beverage_industry_maintenance_system.mlflow)
 
 
