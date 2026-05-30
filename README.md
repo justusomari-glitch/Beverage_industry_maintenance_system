@@ -6,8 +6,8 @@ Real-time Kafka sensor streaming across 50 machines in 4 plant sections,
 LLM-generated maintenance recommendations.
 
 ## Live Demo
-- **Manual Input (with SHAP):** [link]
-- **Real-Time Monitoring:** [link]
+- **Manual Input (with SHAP):** [https://beverageindustrymaintenancesystem-b4xlh2dyhxtjzmr3hwwepj.streamlit.app/]
+- **Real-Time Monitoring:** [https://beverageindustrymaintenancesystem-k3iupzxlon9yukzmxfnadf.streamlit.app/]
 
 ## System Architecture
 
