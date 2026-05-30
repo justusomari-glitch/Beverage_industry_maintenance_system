@@ -66,7 +66,8 @@ def get_connection():
         user=os.getenv('DB_USER'),
         password=os.getenv('DB_PASSWORD'),
         database=os.getenv('DB_NAME'),
-        ssl={'ca': os.getenv('SSL_CA_CERT')},
+        ssl_ca={'ca': os.getenv('SSL_CA_CERT')},
+        ssl_verify_cert=True
     )
 def get_data(table_name,limit=100):
     try:
