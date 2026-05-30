@@ -71,4 +71,18 @@ cd Beverage_industry_maintenance_system
 pip install -r requirements.txt
 
 
+DB_HOST=
+DB_PORT=
+DB_USER=
+DB_PASSWORD=
+DB_NAME=
+SSL_CA_CERT=ca.pem
+KAFKA_BOOTSTRAP_SERVERS=
+KAFKA_API_KEY=
+KAFKA_API_SECRET=
+GROQ_API_KEY=
+FASTAPI_URL=
+
+
+
 
