@@ -48,5 +48,27 @@ LLM-generated maintenance recommendations.
 All models unified via **MCDM scoring engine** into a single priority score 
 per machine.
 
-## Project Structure
+
+## Tech Stack
+
+| Layer | Technology |
+|---|---|
+| ML | scikit-learn, XGBoost, SHAP |
+| Streaming | Confluent Cloud Kafka |
+| API | FastAPI (EC2) |
+| Frontend | Streamlit |
+| Database | Aiven MySQL |
+| LLM | Groq |
+| Experiment Tracking | MLflow + DagsHub |
+| CI/CD | GitHub Actions |
+| Containerization | Docker |
+
+## Setup
+
+```bash
+git clone https://github.com/justusomari-glitch/Beverage_industry_maintenance_system
+cd Beverage_industry_maintenance_system
+pip install -r requirements.txt
+
+
 
