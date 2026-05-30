@@ -6,7 +6,7 @@ import plotly.graph_objects as go
 from datetime import datetime
 import os
 from dotenv import load_dotenv
-import pymysql
+import mysql.connector
 
 
 load_dotenv()
@@ -60,7 +60,7 @@ st.markdown("""
 
 #DB Connection
 def get_connection():
-    return pymysql.connect(
+    return mysql.connector.connect(
         host=os.getenv('DB_HOST'),
         port=int(os.getenv('DB_PORT')),
         user=os.getenv('DB_USER'),
