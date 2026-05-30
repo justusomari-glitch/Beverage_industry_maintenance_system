@@ -63,8 +63,8 @@ per machine.
 | CI/CD | GitHub Actions |
 | Containerization | Docker |
 
-#Project Structure
 
+## Project Stracture
 Beverage_industry_maintenance_system/
 ├── .github/
 │   └── workflows/
