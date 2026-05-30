@@ -83,6 +83,56 @@ KAFKA_API_SECRET=
 GROQ_API_KEY=
 FASTAPI_URL=
 
+Beverage_industry_maintenance_system/
+├── .github/
+│   └── workflows/
+│       └── ci.yaml
+├── data and tables/
+├── kafka/
+│   ├── consumers/
+│   │   ├── __pycache__/
+│   │   ├── base_consumer.py
+│   │   ├── config.py
+│   │   ├── db.py
+│   │   ├── packaging_consumer.py
+│   │   ├── production_line_consumer.py
+│   │   ├── raw_material_consumer.py
+│   │   └── utilities_consumer.py
+│   └── producers/
+│       ├── packaging_producer.py
+│       └── production_line_producer.py
+├── models/
+│   ├── anomaly.pkl
+│   ├── failure_type.pkl
+│   ├── recommended_action.pkl
+│   ├── root_cause_model.pkl
+│   └── severity.pkl
+├── src/
+│   ├── __pycache__/
+│   ├── __init__.py
+│   ├── llm.py
+│   ├── Logger.py
+│   ├── models.py
+│   ├── predict.py
+│   ├── schema.py
+│   └── shap_explainer.py
+├── tests/
+│   ├── __pycache__/
+│   ├── test_predict.py
+│   └── test_schema.py
+├── .dockerignore
+├── .env
+├── .gitignore
+├── ca.pem
+├── Dockerfile
+├── LICENSE
+├── Maintenance_system.ipynb
+├── README.md
+├── requirements.txt
+├── streamlit_manual.py
+└── streamlit_real_time.py
+
+
 
 
 
