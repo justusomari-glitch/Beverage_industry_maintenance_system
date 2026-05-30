@@ -137,6 +137,8 @@ KAFKA_API_SECRET=
 GROQ_API_KEY=
 FASTAPI_URL=
 ```
+## Screenshots
+[View Screenshots](screenshots/)
 
 ## Links
 - 🔗 [LinkedIn](https://www.linkedin.com/in/justus-kwache-omari/)
