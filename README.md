@@ -65,7 +65,7 @@ per machine.
 
 
 ## Project Stracture
-'''
+```
 Beverage_industry_maintenance_system/
 ├── .github/
 │   └── workflows/
