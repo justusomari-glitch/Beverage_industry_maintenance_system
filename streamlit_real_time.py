@@ -59,6 +59,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 #DB Connection
+BASE_DIR=os.path.dirname(os.path.abspath(__file__))
 def get_connection():
     return mysql.connector.connect(
         host=os.getenv('DB_HOST'),
@@ -66,7 +67,7 @@ def get_connection():
         user=os.getenv('DB_USER'),
         password=os.getenv('DB_PASSWORD'),
         database=os.getenv('DB_NAME'),
-        ssl_ca= os.getenv('SSL_CA_CERT'),
+        ssl_ca= os.path.join(BASE_DIR,'ca.pem'),
         ssl_verify_cert=True
     )
 def get_data(table_name,limit=100):
