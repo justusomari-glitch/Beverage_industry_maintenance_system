@@ -114,12 +114,17 @@ Beverage_industry_maintenance_system/
 ├── requirements.txt
 ├── streamlit_manual.py
 └── streamlit_real_time.py
-## Setup
+```
+
+## Set Up
 
 ```bash
 git clone https://github.com/justusomari-glitch/Beverage_industry_maintenance_system
 cd Beverage_industry_maintenance_system
 pip install -r requirements.txt
+```
+
+```
 DB_HOST=
 DB_PORT=
 DB_USER=
