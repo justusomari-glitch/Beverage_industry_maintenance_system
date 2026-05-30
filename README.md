@@ -63,25 +63,7 @@ per machine.
 | CI/CD | GitHub Actions |
 | Containerization | Docker |
 
-## Setup
-
-```bash
-git clone https://github.com/justusomari-glitch/Beverage_industry_maintenance_system
-cd Beverage_industry_maintenance_system
-pip install -r requirements.txt
-
-
-DB_HOST=
-DB_PORT=
-DB_USER=
-DB_PASSWORD=
-DB_NAME=
-SSL_CA_CERT=ca.pem
-KAFKA_BOOTSTRAP_SERVERS=
-KAFKA_API_KEY=
-KAFKA_API_SECRET=
-GROQ_API_KEY=
-FASTAPI_URL=
+#Project Structure
 
 Beverage_industry_maintenance_system/
 ├── .github/
@@ -131,6 +113,25 @@ Beverage_industry_maintenance_system/
 ├── requirements.txt
 ├── streamlit_manual.py
 └── streamlit_real_time.py
+## Setup
+
+```bash
+git clone https://github.com/justusomari-glitch/Beverage_industry_maintenance_system
+cd Beverage_industry_maintenance_system
+pip install -r requirements.txt
+DB_HOST=
+DB_PORT=
+DB_USER=
+DB_PASSWORD=
+DB_NAME=
+SSL_CA_CERT=ca.pem
+KAFKA_BOOTSTRAP_SERVERS=
+KAFKA_API_KEY=
+KAFKA_API_SECRET=
+GROQ_API_KEY=
+FASTAPI_URL=
+
+
 
 
 
